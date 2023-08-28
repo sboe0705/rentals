@@ -1,0 +1,13 @@
+CREATE SEQUENCE rent_seq
+START WITH 1
+INCREMENT BY 50;
+
+CREATE TABLE rent (
+  id BIGINT NOT NULL,
+  item_id BIGINT NOT NULL,
+  rent_since TIMESTAMP(6),
+  returned_at TIMESTAMP(6)
+);
+
+ALTER TABLE rent
+ADD CONSTRAINT pk_rent_id PRIMARY KEY(id);

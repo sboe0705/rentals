@@ -85,9 +85,9 @@
 							<goal>build-image-no-fork</goal>
 						</goals>
 						<configuration>
-							<imageName>${project.artifactId}:${project.version}</imageName>
+							<imageName>${project.parent.artifactId}:${project.version}</imageName>
 							<image>
-								<tags>${project.artifactId}:latest</tags>
+								<tags>${project.parent.artifactId}:latest</tags>
 							</image>
 						</configuration>
 					</execution>

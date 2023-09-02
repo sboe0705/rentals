@@ -17,10 +17,10 @@ import de.sboe0705.rentals.data.RentRepository;
 import de.sboe0705.rentals.model.Rent;
 import de.sboe0705.rentals.service.ItemAlreadyReturnedException;
 import de.sboe0705.rentals.service.ItemNotYetReturnedException;
-import de.sboe0705.rentals.service.RentService;
+import de.sboe0705.rentals.service.RentalService;
 
 @Service
-class RentServiceImpl implements RentService {
+class RentalServiceImpl implements RentalService {
 
 	@Autowired
 	private RentRepository rentRepository;

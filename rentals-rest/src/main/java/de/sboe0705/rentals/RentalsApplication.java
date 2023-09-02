@@ -1,4 +1,4 @@
-package de.sboe0705.rentals.rest;
+package de.sboe0705.rentals;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

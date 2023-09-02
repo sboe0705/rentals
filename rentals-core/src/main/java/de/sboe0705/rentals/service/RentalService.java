@@ -3,7 +3,7 @@ package de.sboe0705.rentals.service;
 import java.util.Collection;
 import java.util.Map;
 
-public interface RentService {
+public interface RentalService {
 
 	boolean isItemRent(Long itemId);
 

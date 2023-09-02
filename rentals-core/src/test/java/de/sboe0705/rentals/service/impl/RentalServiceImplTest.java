@@ -20,17 +20,17 @@ import de.sboe0705.rentals.data.RentRepository;
 import de.sboe0705.rentals.model.Rent;
 import de.sboe0705.rentals.service.ItemAlreadyReturnedException;
 import de.sboe0705.rentals.service.ItemNotYetReturnedException;
-import de.sboe0705.rentals.service.RentService;
+import de.sboe0705.rentals.service.RentalService;
 
-class RentServiceImplTest {
+class RentalServiceImplTest {
 
-	private RentService underTest;
+	private RentalService underTest;
 
 	private RentRepository rentRepositoryMock;
 
 	@BeforeEach
 	void setUp() {
-		underTest = new RentServiceImpl();
+		underTest = new RentalServiceImpl();
 
 		rentRepositoryMock = Mockito.mock(RentRepository.class);
 		ReflectionTestUtils.setField(underTest, "rentRepository", rentRepositoryMock);

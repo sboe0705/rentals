@@ -19,7 +19,12 @@
 	<modules>
 		<module>rentals-core</module>
 		<module>rentals-rest</module>
+		<module>rentals-testcoverage</module>
 	</modules>
+
+	<properties>
+		<minimum.line.coverage>0.90</minimum.line.coverage>
+	</properties>
 
 	<dependencies>
 
@@ -38,6 +43,11 @@
 					<groupId>org.springdoc</groupId>
 					<artifactId>springdoc-openapi-maven-plugin</artifactId>
 					<version>1.4</version>
+				</plugin>
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>0.8.8</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>

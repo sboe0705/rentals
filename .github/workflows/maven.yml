@@ -31,6 +31,8 @@ jobs:
         docker tag rentals:latest ghcr.io/${{ github.repository_owner }}/rentals:latest
         echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
         docker push ghcr.io/${{ github.repository_owner }}/rentals:latest
+    - name: Check Files
+      run: pwd && ls -la
     - name: Archive Code Coverage Report
       uses: actions/upload-artifact@v3
       with:

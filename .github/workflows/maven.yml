@@ -31,3 +31,8 @@ jobs:
         docker tag rentals:latest ghcr.io/${{ github.repository_owner }}/rentals:latest
         echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
         docker push ghcr.io/${{ github.repository_owner }}/rentals:latest
+    - name: Archive Code Coverage Report
+      uses: actions/upload-artifact@v3
+      with:
+        name: code-coverage-report
+        path: rentals-testcoverage/target/site/jacoco-aggregate/**/*

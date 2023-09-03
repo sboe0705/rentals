@@ -12,7 +12,7 @@
 	<artifactId>rentals-testcoverage</artifactId>
 	<packaging>pom</packaging>
 
-	<name>rentals-rest</name>
+	<name>rentals-testcoverage</name>
 	<description>Library Application - Test Coverage</description>
 
 	<dependencies>

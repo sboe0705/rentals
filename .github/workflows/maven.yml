@@ -25,14 +25,12 @@ jobs:
         distribution: 'adopt'
         cache: 'maven'
     - name: Build with Maven
-      run: mvn -B package
+      run: mvn -B install
     - name: Publish Image
       run: |
         docker tag rentals:latest ghcr.io/${{ github.repository_owner }}/rentals:latest
         echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
         docker push ghcr.io/${{ github.repository_owner }}/rentals:latest
-    - name: Check Files
-      run: pwd && ls -la && ls rentals-testcoverage && ls rentals-testcoverage/target && ls rentals-testcoverage/target/site
     - name: Archive Code Coverage Report
       uses: actions/upload-artifact@v3
       with:

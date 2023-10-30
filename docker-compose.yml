@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+  rentals-app:
+    image: 'rentals:latest'
+    container_name: rentals-app
+    depends_on:
+      rentals-db:
+        condition: service_healthy
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://rentals-db:5432/rentals-db
+      - SPRING_DATASOURCE_USERNAME=rentals-db-user
+      - SPRING_DATASOURCE_PASSWORD=rentals-db-password
+    ports:
+      - 8083:8080
+  rentals-db:
+    image: 'postgres:16-alpine'
+    container_name: rentals-db
+    environment:
+      - POSTGRES_DB=rentals-db
+      - POSTGRES_USER=rentals-db-user
+      - POSTGRES_PASSWORD=rentals-db-password
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d rentals-db -U rentals-db-user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    ports:
+      - 5435:5432

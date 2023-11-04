@@ -60,6 +60,10 @@
 						<goals>
 							<goal>generate</goal>
 						</goals>
+						<configuration>
+							<attachArtifact>true</attachArtifact>
+							<outputFileName>rentals-openapi.json</outputFileName>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>

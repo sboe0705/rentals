@@ -40,7 +40,7 @@ public class RentalsController {
 			@Parameter(name = "onlyRent", description = "Optional parameter to select only rents that are currently rent (isRent = true).") //
 	})
 	@GetMapping("/rents")
-	public List<Rent> getRentals(@RequestParam(defaultValue = "false") boolean onlyRent) {
+	public List<Rent> getRents(@RequestParam(defaultValue = "false") boolean onlyRent) {
 		List<Rent> rents = new ArrayList<>();
 		rentRepository.findAll() //
 				.forEach(rents::add);

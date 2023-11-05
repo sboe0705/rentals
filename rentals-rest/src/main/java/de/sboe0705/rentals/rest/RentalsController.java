@@ -93,7 +93,7 @@ public class RentalsController {
 			@ApiResponse(responseCode = "400", description = "Item was not rent.") //
 	})
 	@PostMapping("/return/item/{itemId}")
-	public void rentItem(@PathVariable long itemId) {
+	public void returnItem(@PathVariable long itemId) {
 		try {
 			rentalService.returnItem(itemId);
 		} catch (ItemAlreadyReturnedException e) {
